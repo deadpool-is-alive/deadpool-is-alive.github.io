@@ -4,7 +4,7 @@ const toast = document.getElementById('toast');
 
 if(form){
   form.addEventListener('submit', async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const originalHTML = btn.innerHTML;
 
