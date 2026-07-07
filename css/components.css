@@ -325,7 +325,7 @@ body.cursor-hover .cursor-ring {
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
-  z-index: 50;
+  z-index: 75;
   cursor: none;
   border: none;
 }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Ansh Kumar | Home</title>
   
   <link rel="icon" type="image/svg+xml" href="favicon.png">
@@ -69,7 +70,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center overflow-hidden">
+  <section class="relative flex items-center overflow-hidden" style="min-height: 100dvh; min-height: 100svh;">
   <canvas id="hero-3d" class="hero-canvas"></canvas>
   
   <div class="orb" style="background: #ff5e3a; width: 500px; height: 500px; top: 10%; left: -150px; opacity: 0.25;"></div>
@@ -96,7 +97,7 @@
           </p>
         </div>
 
-        <div class="flex flex-col gap-2 font-mon text-xs text-[var(--muted)]">
+        <div class="flex flex-col gap-2 font-mon text-xs text-[var(--fg)]">
           <div class="flex items-center gap-2">
             <span class="text-[var(--accent-2)]">●</span>
             <span>CIVIL undergrad @ IIT Kanpur</span>
@@ -395,9 +396,11 @@
         <a href="#" class="project-card reveal group">
           <div class="aspect-[4/3] overflow-hidden relative">
             <img src="https://drive.google.com/thumbnail?id=1nHP0AnrG9pdzQBQgxOcsVWLxQJM8ED10&sz=w1000" class="proj-img w-full h-full object-cover">
-            <div class="proj-overlay"></div>
-            <span class="absolute top-4 left-4 px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">Windows</span>
-            <span class="absolute top-4 left-4 px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">Game</span>
+            <div class="proj-overlay "></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2 flex-wrap">
+              <span class="px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">Windows</span>
+              <span class="px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">Game</span>
+            </div>
           </div>
           <div class="p-6">  
             <div class="font-mono text-[10px] text-[var(--muted)] mb-2 tracking-widest">2023</div>
@@ -483,7 +486,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="relative py-32 px-6 lg:px-10 z-10">
+  <section id="contact" class="relative overflow-hidden py-32 px-6 lg:px-10 z-10">
     <div class="orb" style="background: #ff5e3a; width: 400px; height: 400px; top: 20%; right: -100px; opacity: 0.15;"></div>
 
     <div class="max-w-7xl mx-auto relative">

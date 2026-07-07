@@ -6,8 +6,10 @@ export function initHeroScene(){
   if(!canvas) return;
 
   const scene = new THREE.Scene();
+  
+  const container = canvas.parentElement;
 
-  let sizes = {width: window.innerWidth, height: window.innerHeight};
+  let sizes = {width: container.clientWidth, height: container.clientHeight};
 
   const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 100);
   camera.position.set(0, 0, 7);
@@ -228,10 +230,11 @@ export function initHeroScene(){
   }
 
   animate();
-
   window.addEventListener('resize', () => {
-    sizes.width = window.innerWidth;
-    sizes.height = window.innerHeight;
+
+    
+    sizes.width = container.clientWidth;
+    sizes.height = container.clientHeight;
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
     renderer.setSize(sizes.width, sizes.height);
