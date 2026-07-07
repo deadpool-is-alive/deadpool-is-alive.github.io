@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ansh Kumar | Home</title>
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.png">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="font-mono text-xs text-[var(--muted)] tracking-widest">INITIALIZING_SYSTEM</div>
+    <div class="loader-bar"></div>
+    <div class="font-display text-2xl font-bold gradient-text">Ansh Kumar</div>
+  </div>
+
+  <!-- Cursor & Effects -->
+  <div class="cursor-dot"id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="noise"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 flex items-center justify-center">
+          <div class="absolute inset-0 bg-[var(--accent)] rotate-45 group-hover:rotate-[135deg] transition-transform duration-500"></div>
+          <span class="relative fond-display font-bold text-[var(--bg)] text-sm">AK</span>
+        </div>
+        <div class="hidden sm:block">
+          <div class="font-display font-bold text-sm leading-none">Ansh Kumar</div>
+          <div class="font-mono text-[10px] text-[var(--muted)] mt-1">v1.7.2026</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#work" class="nav-link text-sm">Work</a>
+        <a href="#about" class="nav-link text-sm">About</a>
+        <a href="#skills" class="nav-link text-sm">Skills</a>
+        <a href="#journey" class="nav-link text-sm">Journey</a>
+        <a href="#contact" class="nav-link text-sm">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border-strong)]">
+          <div class="pulse-dot"></div>
+          <span class="font-mono text-xs">Available</span>
+        </div>
+        <a href="#contact" class="btn-primary text-sm magnetic" style="padding: 0.6rem 1.2rem;">
+          <span>Let's talk</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+  <canvas id="hero-3d" class="hero-canvas"></canvas>
+  
+  <div class="orb" style="background: #ff5e3a; width: 500px; height: 500px; top: 10%; left: -150px; opacity: 0.25;"></div>
+  <div class="orb" style="background: #d4ff3a; width: 400px; height: 400px; bottom: 5%; right: -100px; opacity: 0.15;"></div>
+
+  <div class="absolute inset-0 bg-gradient-to-br from-[var(--bg)]/70 via-transparent to-[var(--bg)]/50 z-[1] pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="section-tag">Portfolio / 2026</span>
+        <span class="font-mono text-xs text-[var(--muted)]">— based in Kanpur, UP</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="block">Ansh</span>
+        <span class="block gradient-text">Kumar.</span>
+      </h1>
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mt-2">
+        <div class="max-w-xl">
+          <p class="text-lg lg:text-xl text-[var(--fg)]/80 leading-relaxed">
+            Student by day, data analyst by night, software and game developer in the spaces between. I study data and built interactive world and systems to power them.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2 font-mon text-xs text-[var(--muted)]">
+          <div class="flex items-center gap-2">
+            <span class="text-[var(--accent-2)]">●</span>
+            <span>CIVIL undergrad @ IIT Kanpur</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[var(--accent)]">●</span>
+            <span>Intern @ LogicLens </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[var(--accent-3)]">●</span>
+            <span>Indie game developer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 mt-6">
+        <a href="#work" class="btn-primary magnetic">
+          <span>View work</span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+        <a href="#contact" class="btn-ghost magnetic">
+          <span>Get in touch</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+    <span class="font-mono text-[10px] text-[var(--muted)] uppercase tracking-widest">Scroll</span>
+    <div class="w-px h-12 bg-gradient-to-b from-[var(--muted)] to-transparent"></div>
+  </div>
+  </section>
+
+  <!-- Marquee -->
+  <section class="py-8 border-y border-[var(--border)] bg-[var(--bg-2)] relative z-10">
+    <div class="marquee">
+      <div class="marquee-track">
+        <!-- Duplicate content for seamless loop -->
+        <span class="font-display text-4xl lg:text-5xl font-bold flex items-center gap-10 whitespace-nowrap">
+        <span>C++</span><span class="text-[var(--accent)]">●</span>
+        <span>C#</span><span class="text-[var(--accent-2)]">●</span>
+        <span>Python</span><span class="text-[var(--accent)]">●</span>
+        <span>ML</span><span class="text-[var(--accent-2)]">●</span>
+        <span>AI</span><span class="text-[var(--accent)]">●</span>
+        <span>TypeScript</span><span class="text-[var(--accent-2)]">●</span>
+        <span>Unity</span><span class="text-[var(--accent)]">●</span>
+        <span>Unreal</span><span class="text-[var(--accent)]">●</span>
+        <span>Three.js</span><span class="text-[var(--accent-2)]">●</span>
+        <span>React</span><span class="text-[var(--accent)]">●</span>
+        <span>WebGL</span><span class="text-[var(--accent-2)]">●</span>
+        <span>Blender</span><span class="text-[var(--accent)]">●</span>
+        <span>GLSL</span><span class="text-[var(--accent-2)]">●</span>
+      </span>
+      <span class="font-display text-4xl lg:text-5xl font-bold flex items-center gap-10 whitespace-nowrap" aria-hidden="true">
+        <span>C++</span><span class="text-[var(--accent)]">●</span>
+        <span>C#</span><span class="text-[var(--accent-2)]">●</span>
+        <span>Python</span><span class="text-[var(--accent)]">●</span>
+        <span>ML</span><span class="text-[var(--accent-2)]">●</span>
+        <span>AI</span><span class="text-[var(--accent)]">●</span>
+        <span>TypeScript</span><span class="text-[var(--accent-2)]">●</span>
+        <span>Unity</span><span class="text-[var(--accent)]">●</span>
+        <span>Unreal</span><span class="text-[var(--accent)]">●</span>
+        <span>Three.js</span><span class="text-[var(--accent-2)]">●</span>
+        <span>React</span><span class="text-[var(--accent)]">●</span>
+        <span>WebGL</span><span class="text-[var(--accent-2)]">●</span>
+        <span>Blender</span><span class="text-[var(--accent)]">●</span>
+        <span>GLSL</span><span class="text-[var(--accent-2)]">●</span>
+      </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="relative py-32 px-6 lg:px-10 z-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-12 reveal">
+      <span class="section-tag">01 — About</span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+      <div class="lg:col-span-7 reveal">
+        <h2 class="font-display text-4xl lg:text-6xl font-bold leading-tight mb-8 tracking-tight">
+          I build <span class="gradient-text">experiences</span> at the intersection of code, data and creativity.
+        </h2>
+
+        <div class="space-y-6 text-lg text-[var(--fg)]/70 leading-relaxed">
+          <p>
+            I'm a Civil Enginnering undergraduate at IIT Kanpur with a deep fascination for how things work — from data to model, from model to prediction, from dev to deploy. My journey to start learning coding started with me first mind-blown that how it was simple to get started with web development and then this grew also to making my own games and Currently, I am now hooked on learning to create with data and interactive software ever since.
+          </p>
+          <p>
+            These days I split my time between three worlds: <span class="text-[var(--accent)] font-medium">studying algorithms and systems</span> from internet, <span class="text-[var(--accent-2)] font-medium">shipping production software</span> as an engineering intern, and <span class="text-[var(--accent-3)] font-medium">crafing models</span> on weekends. Each feeds the other in unexpected ways.
+          </p>
+          <p>
+            I care about feel — that hard-to-define quality that makes software satisfying to use. Whether it's a 90% accuracy of the model or a butter-smooth page transition on the web. the details matter.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12">
+          <div>
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-1 tracking-widest">FOCUS</div>
+            <div class="font-display font-bold text-lg">ML Models</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-1 tracking-widest">YEAR</div>
+            <div class="font-display font-bold text-lg">4th</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-1 tracking-widest">LOCATION</div>
+            <div class="font-display font-bold text-lg">Kanpur, UP</div>
+          </div>
+          <div>
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-1 tracking-widest">STATUS</div>
+            <div class="font-display font-bold text-lg text-[var(--accent-2)]">Open to Work</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 reveal">
+        <div class="glow-card">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <div class="font-mono text-[10px] text-[var(--muted)] mb-2 tracking-widest">CURRENTLY BUILDING</div>
+              <div class="font-display text-2xl font-bold">"LogicLens Drive"</div>
+              <div class="text-sm text-[var(--muted)] mt-1">A company's digital asset management system</div>
+            </div>
+            <div class="w-12 h-12 rounded-full border border-[var(--accent)] flex items-center justify-center floating shrink-0">
+              <i class="fa-solid fa-rocket text-[var(--accent)]"></i>
+            </div>
+          </div>
+
+          <div class="space-y-1 font-mono text-sm">
+            <div class="flex justify-between items-center py-2 border-b border-[var(--border)]">
+              <span class="text-[var(--muted)]">tech stack</span>
+              <span>React + Next.js + NestJs</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[var(--border)]">
+              <span class="text-[var(--muted)]">progress</span>
+              <span class="text-[var(--accent-2)]">80%</span>
+            </div>
+            <div class="flex justify-between items-center py-2 border-b border-[var(--border)]">
+              <span class="text-[var(--muted)]">release</span>
+              <span>July 2026</span>
+            </div>
+            <div class="flex justify-between items-center py-2 ">
+              <span class="text-[var(--muted)]">team</span>
+              <span">solo</span>
+            </div>
+          </div>
+          
+          
+          <div class="mt-6 pt-6 border-t border-[var(--border)]">
+            <div class="flex items-center gap-3 text-sm text-[var(--muted)]">
+              <i class="fa-solid fa-headphones text-[var(--accent)]"></i>
+              <span>Now playing: <span class="text-[var(--fg)]">Yeh Raaten Yeh Mausam - Sanam</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-3 gap-4">
+          <div class="glow-card text-center" style="padding: 1.25rem 0.5rem;">
+            <div class="font-display text-3xl font-bold gradient-text" data-count="14">0</div>
+            <div class="font-mono text-[9px] text-[var(--muted)] uppercase tracking-widest mt-1">Projects</div>
+          </div>
+          <div class="glow-card text-center" style="padding: 1.25rem 0.5rem;">
+            <div class="font-display text-3xl font-bold gradient-text" data-count="3">0</div>
+            <div class="font-mono text-[9px] text-[var(--muted)] uppercase tracking-widest mt-1">ERR</div>
+          </div>
+          <div class="glow-card text-center" style="padding: 1.25rem 0.5rem;">
+            <div class="font-display text-3xl font-bold gradient-text" data-count="5">0</div>
+            <div class="font-mono text-[9px] text-[var(--muted)] uppercase tracking-widest mt-1">K Lines/yr</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="relative py-32 px-6 lg:px-10 z-10 bg-[var(--bg-2)] grid-pattern">
+    <div class="max-w-7xl mx-auto relative">
+      <div class="flex items-center gap-3 mb-12 reveal">
+        <span class="section-tag">02 — Toolkit</span>
+      </div>
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <h2 class="font-display text-4xl lg:text-6xl font-bold leading-tight reveal max-w-3xl tracking-tight">
+          The <span class="outline-text">stack</span> I use to ship things.
+        </h2>
+        <p class="text-[var(--muted)] max-w-md reveal">
+          Tools are just tools — what matters is what you build with them. 
+          But here's what I reach for most often.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-12 reveal">
+        <button class="tab-btn active" data-tab="all">All</button>
+        <button class="tab-btn" data-tab="lang">Languages</button>
+        <button class="tab-btn" data-tab="ml">AI/ML</button>
+        <button class="tab-btn" data-tab="web">Web</button>
+        <button class="tab-btn" data-tab="game">Game Dev</button>
+        <button class="tab-btn" data-tab="tools">Tools</button>
+      </div>
+
+      <div class="flex flex-wrap gap-3" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="work" class="relative py-32 px-6 lg:px-10 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center gap-3 mb-12 reveal">
+        <span class="section-tag">03 — Selected work</span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <h2 class="font-display text-4xl lg:text-6xl font-bold leading-tight reveal max-w-3xl tracking-tight">
+          Things I've <span class="gradient-text">built</span> recently.
+        </h2>
+        <a href="#" class="btn-ghost reveal magnetic">
+          <span>View archive</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Featured Project -->
+      <div class="reveal mb-8">
+        <a href="https://logiclens-drive-vercel-deploy.vercel.app/" class="project-card group" target="_blank" rel="noopener noreferrer">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="aspect-[4/3] lg:aspect-auto overflow-hidden relative">
+              <img src="https://drive.google.com/thumbnail?id=15R7JRp1dzTvmCK27T632bjRKfIcEAYlS&sz=w1000" alt="LogicLens Digital Asset Management" class="proj-img w-full h-full object-cover">
+              <div class="proj-overlay"></div>
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span class="px-3 py-1 bg-[var(--accent)] text-[var(--bg)] font-mono text-[10px] rounded-full tracking-widest">FEATURED</span>
+                <span class="px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">Web App</span>
+              </div> 
+            </div>
+            <div class="p-8 lg:p-12 flex flex-col justify-between gap-6">
+              <div>
+                <div class="font-mono text-[10px] text-[var(--muted)] mb-3 tracking-widest">2026 - SOLO PROJECT</div>
+                <h3 class="font-display text-4xl lg:text-5xl font-bold mb-4 tracking-tight">LogicLens Drive</h3>
+                <p class="text-[var(--fg)]/70 leading-relaxed mb-6">
+                  A company's digital asset management system, built frontend using react and next.js and backend with nestjs integrating googleapis for getting data from the google drive.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 border border-[var(--border-strong)] rounded-full text-xs font-mono">React</span>
+                  <span class="px-3 py-1 border border-[var(--border-strong)] rounded-full text-xs font-mono">Next.js</span>
+                  <span class="px-3 py-1 border border-[var(--border-strong)] rounded-full text-xs font-mono">Nestjs</span>
+                  <span class="px-3 py-1 border border-[var(--border-strong)] rounded-full text-xs font-mono">Google Api</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-sm">
+                <span class="flex items-center gap-2 text-[var(--accent-2)]"><i class="fa-solid fa-circle-play"></i>Visit Website</span>
+                <span class="text-[var(--muted)]">.</span>
+                <span class="flex items-center gap-2 text-[var(--muted)]"><i class="fa-brands fa-github"></i>github.com
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="https://hall-3-canteen.netlify.app/" class="project-card reveal group" target="_blank" rel="noopener noreferrer">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://drive.google.com/thumbnail?id=1_LOCiastHG4BYyH13xQBB5DyuqbTML6G&sz=w1000" class="proj-img w-full h-full object-cover">
+            <div class="proj-overlay"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">WebApp</span>
+          </div>
+          <div class="p-6">
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-2 tracking-widest">2026</div>
+            <h3 class="font-display text-2xl font-bold mb-2 tracking-tight">Hall 3 Canteen</h3>
+            <p class="text-sm text-[var(--fg)]/60 mb-4">A food-ordering website for a hyper local area hall of residence. Built in Vanilla Javascript</p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--muted)]">
+              <span>HTML</span><span>.</span><span>CSS</span><span>.</span><span>JS</span><span>.</span><span>Node.js</span>
+            </div>
+          </div>
+        </a>
+
+
+        <a href="#" class="project-card reveal group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://picsum.photos/seed/codelabyrinth/600/450.jpg" class="proj-img w-full h-full object-cover">
+            <div class="proj-overlay"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">WebApp</span>
+          </div>
+          <div class="p-6">
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-2 tracking-widest">2026</div>
+            <h3 class="font-display text-2xl font-bold mb-2 tracking-tight">Hall 3 Canteen</h3>
+            <p class="text-sm text-[var(--fg)]/60 mb-4">A food-ordering website for a hyper local area hall of residence. Built in Vanilla Javascript</p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--muted)]">
+              <span>HTML</span><span>.</span><span>CSS</span><span>.</span><span>JS</span><span>.</span><span>Node.js</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="project-card reveal group">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://picsum.photos/seed/codelabyrinth/600/450.jpg" class="proj-img w-full h-full object-cover">
+            <div class="proj-overlay"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 bg-[var(--bg)]/80 backdrop-blur font-mono text-[10px] rounded-full border border-[var(--border-strong)] tracking-widest">WebApp</span>
+          </div>
+          <div class="p-6">
+            <div class="font-mono text-[10px] text-[var(--muted)] mb-2 tracking-widest">2026</div>
+            <h3 class="font-display text-2xl font-bold mb-2 tracking-tight">Hall 3 Canteen</h3>
+            <p class="text-sm text-[var(--fg)]/60 mb-4">A food-ordering website for a hyper local area hall of residence. Built in Vanilla Javascript</p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-[var(--muted)]">
+              <span>HTML</span><span>.</span><span>CSS</span><span>.</span><span>JS</span><span>.</span><span>Node.js</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Timeline / Journey Section -->
+
+  <section id="journey" class="relative py-32 px-6 lg:px-10 z-10 bg-[var(--bg-2)]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-center gap-3 mb-12 reveal">
+        <span class="section-tag">04 — Journey</span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
+        <h2 class="font-display text-4xl lg:text-6xl font-bold leading-tight reveal max-w-3xl tracking-tight">
+          A timeline of <span class="gradient-text">milestones</span>
+        </h2>
+        <p class="text-[var(--muted)] max-w-md reveal">
+          From typing my first <code class="font-mono text-[var(--accent)]">print("hello")</code> to shipping games and apps used by hundreds.
+        </p>
+      </div>
+
+      <div class="relative max-w-5xl mx-auto">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div class="md:text-right md:pr-12 pl-12 md:pl-0">
+              <div class="font-mono text-[10px] text-[var(--accent)] mb-2 tracking-widest">Jul,2026 — PRESENT</div>
+              <h3 class="font-display text-2xl font-bold mb-2 tracking-tight">Software Engineering Intern</h3>
+              <div class="text-[var(--muted)] mb-3 text-sm">LogicLens · Remote</div>
+              <p class="text-sm tex-[var(--fg)]/70 leading-relaxed">
+                Working on the yolo8v for detection and other stuff and also building a drive for team to manage assets of the company.
+              </p>
+            </div>
+            <div class="hidden md:block"></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div class="hidden md:block"></div>
+            <div class="md:pl-12 pl-12">
+              <div class="font-mono text-[10px] text-[var(--accent-2)] mb-2 tracking-widest">May,2024 — Apr,2025</div>
+              <h3 class="font-display text-2xl font-bold mb-2 tracking-tight">Secretary</h3>
+              <div class="text-[var(--muted)] mb-3 text-sm">Fursat Mandli (Dramatics Club)</div>
+              <p class="text-sm tex-[var(--fg)]/70 leading-relaxed">
+                Performed in nukkad natak, mime and monoact, also represent IIT Kanpur in Cult Meet 7.0 and 8.0
+              </p>
+            </div>
+            <div class="hidden md:block"></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div class="md:text-right md:pr-12 pl-12 md:pl-0">
+              <div class="font-mono text-[10px] text-[var(--accent)] mb-2 tracking-widest">Aug,2023 — PRESENT</div>
+              <h3 class="font-display text-2xl font-bold mb-2 tracking-tight">Civil Engineering Undergraduate</h3>
+              <div class="text-[var(--muted)] mb-3 text-sm">IIT Kanpur</div>
+              <p class="text-sm tex-[var(--fg)]/70 leading-relaxed">
+                Managing the a civil degree between drama and tech, which all are unrelated at all.
+              </p>
+            </div>
+            <div class="hidden md:block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-32 px-6 lg:px-10 z-10">
+    <div class="orb" style="background: #ff5e3a; width: 400px; height: 400px; top: 20%; right: -100px; opacity: 0.15;"></div>
+
+    <div class="max-w-7xl mx-auto relative">
+      <div class="flex items-center gap-3 mb-12 reveal">
+        <span class="section-tag">05 — Contact</span>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div class="reveal">
+          <h2 class="font-display text-4xl lg:text-6xl font-bold leading-tight mb-8 tracking-tight">
+            Let's build <br><span class="gradient-text">something</span> together.
+          </h2>
+          <p class="text-lg text-[var(--fg)]/70 leading-relaxed mb-10">
+            Whether it's a game idea that won't leave you alone, a side project that needs another pair of hands, or just a "hey, how id you do that thing?" — my inbox is open.
+          </p>
+
+          <div class="space-y-4">
+            <a href="mailto:anshydv8@gmail.com" class="flex items-center gap-4 group">
+              <div class="w-12 h-12 rouned-full border border-[var(--border-strong)] flex items-center justify-center group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)]/10 transition shrink-0">
+                <i class="fa-regular fa-envelope text-[var(--accent)]"></i>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] text-[var(--muted)] tracking-widest">EMAIL</div>
+                <div class="font-display font-bold">anshydv8@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/deadpool-is-alive" class="flex items-center gap-4 group" target="_blank" rel="noopener noreferrer">
+              <div class="w-12 h-12 rounded-full border border-[var(--border-strong)] flex items-center justify-center group-hover:border-[var(--accent-2)] group-hover:bg-[var(--accent-2)]/10 transition shrink-0">
+                <i class="fa-brands fa-github text-[var(--accent-2)]"></i>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] text-[var(--muted)] tracking-widest">GITHUB</div>
+                <div class="font-display font-bold">@deadpool-is-alive</div>
+              </div>
+            </a>
+
+            <a href="https://deadpoolisalive.itch.io/" class="flex items-center gap-4 group" target="_blank" rel="noopener noreferrer">
+              <div class="w-12 h-12 rounded-full border border-[var(--border-strong)] flex items-center justify-center group-hover:border-[var(--accent-3)] group-hover:bg-[var(--accent-3)]/10 transition shrink-0">
+                <i class="fa-brands fa-itch-io text-[var(--accent-3)]"></i>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] text-[var(--muted)] tracking-widest">ITCH.IO</div>
+                <div class="font-display font-bold">deadpoolisalive.itch.io</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/anshkumar23/" class="flex items-center gap-4 group" target="_blank" rel="noopener noreferrer">
+              <div class="w-12 h-12 rounded-full border border-[var(--border-strong)] flex items-center justify-center group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)]/10 transition shrink-0">
+                <i class="fa-brands fa-linkedin-in text-[var(--accent)]"></i>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] text-[var(--muted)] tracking-widest">LINKEDIN</div>
+                <div class="font-display font-bold">in/anshkumar23</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form id="contactForm" class="glow-card space-y-6" action="https://formsubmit.co/anshydv8@gmail.com" method="POST">
+            <div class="form-field">
+              <input type="text" id="name" name="name" placeholder=" " required>
+              <label for="name">Your name</label>
+            </div>
+            <div class="form-field">
+              <input type="email" id="email" name="email" placeholder=" " required>
+              <label for="email">Your email</label>
+            </div>
+            <div class="form-field">
+              <input type="text" id="subject" name="subject" placeholder=" " >
+              <label for="subject">Subject (optional)</label>
+            </div>
+            <div class="form-field">
+              <textarea id="message" rows="5" name="message" placeholder=" " required></textarea>
+              <label for="message">Tell me about your project</label>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 flex-wrap gap-4">
+              <div class="font-mono text-xs text-[var(--muted)]">
+                <i class="fa-solid fa-shield-halved text-[var(--accent-2)] mr-1"></i>
+                Encrypted & private
+              </div>
+              <button type="submit" class="btn-primary magnetic">
+                <span>Send message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Portfolio Contact">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer  -->
+  <footer class="relative py-16 px-6 lg:px-10 border-t border-[var(--border)] z-10 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="marquee mb-12">
+        <div class="marquee-track">
+          <span class="font-display text-6xl lg:text-9xl font-bold flex items-center gap-8 whitespace-nowrap text-[var(--surface-2)]">
+            <span>LET'S TALK</span><span class="text-[var(--accent)]">→</span>
+            <span>LET'S BUILD</span><span class="text-[var(--accent-2)]">→</span>
+          </span>
+          <span class="font-display text-6xl lg:text-9xl font-bold flex items-center gap-8 whitespace-nowrap text-[var(--surface-2)]" aria-hidden="true">
+            <span>LET'S TALK</span><span class="text-[var(--accent)]">→</span>
+            <span>LET'S BUILD</span><span class="text-[var(--accent-2)]">→</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-8 border-t border-[var(--border)]">
+        <div class="flex items-center gap-3">
+          <div class="relative w-8 h-8 flex items-center justify-center">
+            <div class="absolute inset-0 bg-[var(--accent)] rotate-45"></div>
+            <span class="relative font-display font-bold text-[var(--bg)] text-xs">AK</span>
+          </div>
+          <div class="font-mono text-xs text-[var(--muted)]">
+            ©2026 Ansh Kumar · Built with Three.js + ☕
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 font-mono text-xs text-[var(--muted)]">
+          <span>Kanpur, UP</span>
+          <span>.</span>
+          <span class="text-[var(--fg)]" id="localTime">--:--</span>
+          <span>.</span>
+          <span>v1.7.2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle text-[var(--accent-2)]"></i>
+    <span class="font-mono text-sm">Message sent! I'll reply within 24h</span>
+  </div>
+
+  <!-- Three.js Import Map -->
+  <script type="importmap">
+    {
+      "imports":{
+        "three" : "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+
+  <!-- Custom JS -->
+  <script type="module" src="js/three-scene.js"></script>
+  <script type="module" src="js/animations.js"></script>
+  <script type="module" src="js/form.js"></script>
+  <script src="js/main.js"></script> 
+
+</body>
+</html>
