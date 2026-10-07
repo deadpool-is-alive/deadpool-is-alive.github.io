@@ -24,7 +24,7 @@ const counterObserver = new IntersectionObserver((entries) => {
         const progress = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.floor(eased * target);
-        el.textContent = current;
+        el.textContent = current+'+';
         if(progress < 1) requestAnimationFrame(update);
       }
       requestAnimationFrame(update);
@@ -42,17 +42,13 @@ const skillsData = [
   { name: 'Python', icon: 'fa-brands fa-python', cat: 'lang' },
   { name: 'TypeScript', icon: 'fa-solid fa-code', cat: 'lang' },
   { name: 'JavaScript', icon: 'fa-brands fa-js', cat: 'lang' },
-  { name: 'GLSL', icon: 'fa-solid fa-microchip', cat: 'lang' },
-  { name: 'Java', icon: 'fa-brands fa-java', cat: 'lang' },
   
   { name: 'Unity', icon: 'fa-solid fa-cube', cat: 'game' },
   { name: 'Unreal Engine', icon: 'fa-solid fa-mountain', cat: 'game' },
   { name: 'Blender', icon: 'fa-solid fa-cubes', cat: 'game' },
   { name: 'Aseprite', icon: 'fa-solid fa-palette', cat: 'game' },
-  { name: 'Shader Graph', icon: 'fa-solid fa-wand-magic-sparkles', cat: 'game' },
 
   { name: 'Machine Learning', icon: 'fa-solid fa-microchip', cat: 'ml'},
-  { name: 'Arificial Intelligence', icon: 'fa-solid fa-robot', cat: 'ml'},
   
   { name: 'React', icon: 'fa-brands fa-react', cat: 'web' },
   { name: 'Three.js', icon: 'fa-solid fa-cube', cat: 'web' },
@@ -66,9 +62,6 @@ const skillsData = [
   { name: 'Docker', icon: 'fa-brands fa-docker', cat: 'tools' },
   { name: 'Kubernetes', icon: 'fa fa-dharmachakra', cat: 'tools'},
   { name: 'Linux', icon: 'fa-brands fa-linux', cat: 'tools' },
-  { name: 'Figma', icon: 'fa-brands fa-figma', cat: 'tools' },
-  { name: 'Vim', icon: 'fa-solid fa-terminal', cat: 'tools' },
-  { name: 'CI/CD', icon: 'fa-solid fa-infinity', cat: 'tools' }
 ];
 
 const skillsGrid = document.getElementById('skillsGrid');
